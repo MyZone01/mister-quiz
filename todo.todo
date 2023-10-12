@@ -1,0 +1,46 @@
+# Project Quiz Game - Tasks to Complete
+
+## Authentication and User Profile Management
+
+- [+] Create the registration form (Blade template).
+- [+] Create the login form (Blade template).
+- [+] Set up routes for user registration and login.
+- [+] Create the controller to handle registration and login.
+- [+] Implement logic for registering a new user.
+- [+] Implement logic for user login.
+- [+] Create a view for the user profile (Blade template).
+- [ ] Display the username, email, and XP in the user profile.
+- [ ] Calculate and display the user's rank based on XP.
+
+## Question and Quiz Management
+
+- [+] Create the Question and Category models.
+- [+] Create migrations for question and category tables.
+- [+] Add relationships between the Question and Category models.
+- [+] Create the form to display quiz questions (Blade template).
+- [+] Display questions and associated answers from the database.
+- [+] Allow the user to choose an answer for each question.
+- [ ] Implement logic to process quiz answers.
+- [ ] Calculate the player's score and update their XP and scores by category.
+
+## Quiz Results Page
+
+- [ ] Create the view for the quiz results page (Blade template).
+- [ ] Display the number of correct questions and the total number of questions.
+- [ ] Display the number of correct questions per category.
+
+## Leaderboard
+
+- [ ] Create the view for the leaderboard page.
+- [ ] Retrieve and display the top ten players based on their XP.
+
+## User Interface
+
+- [ ] Style the pages with CSS for a better user experience.
+- [ ] Ensure the interface is user-friendly and intuitive.
+
+## Testing and Validation
+
+- [ ] Perform tests to ensure all features work correctly.
+- [ ] Fix any bugs and address potential issues.
+
