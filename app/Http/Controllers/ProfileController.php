@@ -11,15 +11,13 @@ class ProfileController extends Controller
     {
 
         $user = Auth()->user();
-
+        $poucentage = array('art' => 0, 'geography' => 0, 'history' => 0, 'science' => 0, 'sports' => 0);
         //variables that will be used to display user score in each category
-        $art = [];
-        $geography = [];
-        $history = [];
-        $science = [];
-        $sports = [];
-        
-        return view('profile', ['art' => $art, 'geography' => $geography, 'history' => $history, 'science' => $science, 'sports' => $sports]);
+
+        foreach ($poucentage as $key => $value) {
+            [$correct, $total] = [explode("/", Auth::user()[$key])[0], explode("/", Auth::user()[$key])[1]];
+            $poucentage [strtolower($key) ]=(100*$correct)/$total;
+        }
+        return view('profile', ['poucentage'=>$poucentage]);
     }
 }
-
