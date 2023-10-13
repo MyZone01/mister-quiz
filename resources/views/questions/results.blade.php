@@ -2,10 +2,10 @@
 
 @section('content')
 
-<a class="top-left-corner blue-btn" href="{{ route('profile') }}"> {{auth()->user()->username}} </a>
+<a class="top-left-corner blue-btn" href="{{ route('profile.index') }}"> {{auth()->user()->username}} </a>
 
 <a class="top-right-corner blue-btn" href="{{ route('home') }}">
-    < Home</a>
+ Home</a>
 
         <div class="center text-center content">
             <div>

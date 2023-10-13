@@ -28,9 +28,14 @@
     color: white;
 }
 </style>
-<form action="{{ route('quiz.store', $quiz ?? '') }}" method="post">
+<form action="{{ route('quiz.store') }}" method="post">
     @csrf
 
+    @error('wrong')
+    <div class="center error-msg mt2 mb2">
+        {{ $message }}
+    </div>
+    @enderror
     @if ($quiz ?? '')
     @foreach ($quiz ?? ''['questions'] as $question)
     <x-question :question="$question" />
@@ -38,7 +43,7 @@
         @foreach ($question->answers as $answer)
             <li>
                 <label>
-                    <input type="radio" name="answers[{{ $question->id }}]" value="[{{ $question->id }}=>{{ $answer->id }}]">
+                    <input type="radio" name="answers[{{ $question->id }}]" required value="{{ $answer->id }}">
                     {{ $answer->answer }}
                 </label>
         @endforeach
