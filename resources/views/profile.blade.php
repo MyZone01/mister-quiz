@@ -26,7 +26,7 @@
     <div class="results-wrapper">
         @foreach ($poucentage as $key => $value)
             <p>{{ $key}}</p>
-            <p class="title">{{ $value}}</p>
+            <p class="title">{{ $value}}%</p>
         @endforeach
     </div>
 </div>

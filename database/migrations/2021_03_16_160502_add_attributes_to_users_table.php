@@ -15,6 +15,7 @@ class AddAttributesToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('xp')->default(0);
+            $table->integer('total_correct')->default(0);
             $table->string('art')->default('0/0');
             $table->string('geography')->default('0/0');
             $table->string('history')->default('0/0');

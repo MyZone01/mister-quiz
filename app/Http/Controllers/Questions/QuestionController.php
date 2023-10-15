@@ -81,6 +81,7 @@ class QuestionController extends Controller
         }
 
         //save changes in DB
+        Auth::user()['total_correct']+= $results ['overall' ];
         Auth::user()->save();
         $quiz->save();
 

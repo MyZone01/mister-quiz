@@ -10,7 +10,7 @@ class LeaderboardController extends Controller
 {
     public function index()
     {
-            $users = User::orderBy('xp', 'desc')->get();  // Retrieve users and order by xp in descending order
+            $users = User::orderBy('xp', 'desc')->limit(10)->get();  // Retrieve users and order by xp in descending order
 
             return view('leaderboard', ['users' => $users]);
     }

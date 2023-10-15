@@ -17,7 +17,7 @@
                     <tr class="table-primary">
                         <td>{{ $user->username }}</td>
                         <td>{{ $user->xp }}</td>
-                        <td>9999</td>  <!-- Assuming this is a placeholder value -->
+                        <td>{{$user->total_correct}}</td>  <!-- Assuming this is a placeholder value -->
                     </tr>
                 @endforeach
             </tbody>
