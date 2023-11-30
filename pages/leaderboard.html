@@ -1,42 +1,107 @@
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mister Quiz</title>
-
-    <link type="text/css" rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 
 <body>
-
-<table>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead class="table-light">
-            <tr>
-                <th>username</th>
-                <th>XP amount</th>
-                <th>total correct answers</th>
-            </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                                    <tr class="table-primary">
-                        <td>alpapie</td>
-                        <td>525</td>
-                        <td>11</td>  <!-- Assuming this is a placeholder value -->
-                    </tr>
-                            </tbody>
-            <tfoot>
-
-            </tfoot>
-    </table>
-</div>
-
-</table>
-
+    <header>
+        <a href="./index.html" class="logo" draggable="false">Mr.Quizz</a>
+        <a href="./quiz.html" class="btn primary">Start Quizz</a>
+    </header>
+    <main class="unique-col">
+        <style>
+            .unique-col {
+                grid-template-columns: 1fr;
+            }
+        </style>
+        <div>
+            <div class="card f-height">
+                <div class="header">
+                    <h3 class="spe">Leaderboard</h3>
+                </div>
+                <div class="body">
+                    <ul class="list">
+                        <li class="list__item">
+                            <div class="list__grid">
+                                <div class="text--left text--small text--medium">Rank</div>
+                                <div class="text--left text--small text--medium">Name</div>
+                                <div class="text--right text--small text--medium">XP</div>
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__grid">
+                                <div class="flag place bg--transparent text--dark bg--yellow">1</div>
+                                <div class="media">
+                                    <div class="avatar media__img">❓</div>
+                                    <div class="media__content">
+                                        <div class="media__title">Dora Wyman</div>
+                                    </div>
+                                </div>
+                                <div class="text--right text--yellow">
+                                    <div class="mt--8">
+                                        <strong>36</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__grid">
+                                <div class="flag place bg--transparent text--dark bg--teal">2</div>
+                                <div class="media">
+                                    <div class="avatar media__img">💻</div>
+                                    <div class="media__content">
+                                        <div class="media__title">Lexie Hills</div>
+                                    </div>
+                                </div>
+                                <div class="text--right text--teal">
+                                    <div class="mt--8">
+                                        <strong>31</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__grid">
+                                <div class="flag place bg--transparent text--dark bg--orange">3</div>
+                                <div class="media">
+                                    <div class="avatar media__img">🧠</div>
+                                    <div class="media__content">
+                                        <div class="media__title">Gene Kohler</div>
+                                    </div>
+                                </div>
+                                <div class="text--right text--orange">
+                                    <div class="mt--8">
+                                        <strong>24</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__grid">
+                                <div class="flag place bg--transparent">4</div>
+                                <div class="media">
+                                    <div class="avatar media__img">🤯</div>
+                                    <div class="media__content">
+                                        <div class="media__title">Lacy Nolan</div>
+                                    </div>
+                                </div>
+                                <div class="text--right">
+                                    <div class="mt--8">
+                                        <strong>22</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

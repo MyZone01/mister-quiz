@@ -1,710 +1,153 @@
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mister Quiz</title>
-
-    <link type="text/css" rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 
 <body>
-    <style>
-    .radio-group input[type="radio"] {
-    display: none;
-}
+    <header class="fixed">
+        <a href="./index.html" class="logo" draggable="false">Mr.Quizz</a>
+        <a href="./result.html" class="btn primary">Submit Quizz</a>
+    </header>
+    <main class="unique-col">
+        <style>
+            .unique-col {
+                grid-template-columns: 1fr;
+            }
 
-.radio-group label {
-    display: inline-block;
-    margin: 0 10px 10px 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 2px solid #3498db;
-    color: #3498db;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
+            label.radio {
+                cursor: pointer;
+                font-size: 2.5rem;
+                line-height: 1.1;
+                display: grid;
+                grid-template-columns: 1em auto;
+                gap: 0.5em;
+                padding-bottom: .5em;
+                border-bottom: 1px solid var(--dark);
+            }
 
-.radio-group label:hover {
-    background-color: #3498db;
-    color: white;
-}
+            label.radio+label.radio {
+                margin-top: 1em;
+            }
 
-.radio-group input[type="radio"]:checked + label {
-    background-color: #3498db;
-    color: white;
-}
-</style>
-<form action="/quiz" method="post">
-    <input type="hidden" name="_token" value="OgoPRwMCplBPp90pCrCPOkyKmYlfXMnq2hq59FSf">
-                <div class="mb4">
-    <p class="center title">The first successful printing press was developed by this man.</p>
+            label.radio:focus-within {
+                color: var(--primary);
+            }
 
-    <div class="checkboxes-wrapper" class="center">
+            input[type="radio"] {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: transparent;
+                margin: 0;
+                font: inherit;
+                color: currentColor;
+                width: 1.15em;
+                height: 1.15em;
+                border: 0.15em solid currentColor;
+                border-radius: 50%;
+                transform: translateY(-0.075em);
 
+                display: grid;
+                place-content: center;
+            }
 
+            input[type="radio"]::before {
+                content: "";
+                width: 0.65em;
+                height: 0.65em;
+                border-radius: 50%;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em var(--primary);
+                background-color: CanvasText;
+            }
 
+            input[type="radio"]:checked::before {
+                transform: scale(1);
+            }
 
+            input[type="radio"]:focus {
+                outline: max(2px, 0.15em) solid currentColor;
+                outline-offset: max(2px, 0.15em);
+            }
+        </style>
+        <div class="card f-height">
+            <div class="header">
+                <h1>The first successful printing press was developed by this man.</h1>
             </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[7]" required value="25">
+            <div class="body">
+                <label class="radio">
+                    <input type="radio" name="radio" />
                     Johannes Gutenberg
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[7]" required value="26">
+                <label class="radio">
+                    <input type="radio" name="radio" />
                     Benjamin Franklin
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[7]" required value="27">
+                <label class="radio">
+                    <input type="radio" name="radio" />
                     Sir Isaac Newton
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[7]" required value="28">
+                <label class="radio">
+                    <input type="radio" name="radio" />
                     Martin Luther
                 </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">What famous rifle is known in America as &quot;The Gun that Won the West?&quot;</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
 
             </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[12]" required value="45">
-                    Henry Repeating Rifle
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[12]" required value="46">
-                    Colt Peacemaker
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[12]" required value="47">
-                    Winchester Model 1873
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[12]" required value="48">
-                    Remington Army Revolver
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">What famous 5th century A.D conqueror was known as &quot;The Scourge of God?&quot;</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
+        </div>
+        <div class="card f-height">
+            <div class="header">
+                <h1>The first successful printing press was developed by this man.</h1>
             </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[11]" required value="41">
-                    Hannibal
+            <div class="body">
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Johannes Gutenberg
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[11]" required value="42">
-                    Julius Caesar
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Benjamin Franklin
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[11]" required value="43">
-                    William the Conqueror
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Sir Isaac Newton
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[11]" required value="44">
-                    Attila the Hun
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which man wrote a document known as the 95 Theses?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[10]" required value="37">
+                <label class="radio">
+                    <input type="radio" name="radio" />
                     Martin Luther
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[10]" required value="38">
-                    Saint Augustus
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[10]" required value="39">
-                    Henry David Thoreau
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[10]" required value="40">
-                    Voltaire
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Who wrote &quot;To be, or not to be, that is the question&quot;?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
 
             </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[13]" required value="49">
-                    Sylvia Plath
+        </div>
+        <div class="card f-height">
+            <div class="header">
+                <h1>The first successful printing press was developed by this man.</h1>
+            </div>
+            <div class="body">
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Johannes Gutenberg
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[13]" required value="50">
-                    Virginia Woolf
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Benjamin Franklin
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[13]" required value="51">
-                    John Steinbeck
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Sir Isaac Newton
                 </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[13]" required value="52">
-                    William Shakespeare
+                <label class="radio">
+                    <input type="radio" name="radio" />
+                    Martin Luther
                 </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which singer has the most UK Number One singles ever?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
 
             </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[23]" required value="89">
-                    The Beatles
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[23]" required value="90">
-                    Madonna
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[23]" required value="91">
-                    Elvis Presley
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[23]" required value="92">
-                    Ed Sheeran
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">La Giaconda is better known as what?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[20]" required value="77">
-                    Meisje met de parel
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[20]" required value="78">
-                    Whistler&#039;s Mother
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[20]" required value="79">
-                    The Princesse de Broglie
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[20]" required value="80">
-                    Mona Lisa
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Van Gogh&#039;s &quot;The Starry Night&quot; illustrates the view from the window of which building</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[16]" required value="61">
-                    Windmill
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[16]" required value="62">
-                    Hospital
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[16]" required value="63">
-                    Asylum
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[16]" required value="64">
-                    Hotel
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which Turkish city has the name of a cartoon character?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[34]" required value="133">
-                    Green Lantern
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[34]" required value="134">
-                    Batman
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[34]" required value="135">
-                    Wolverine
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[34]" required value="136">
-                    Spiderman
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Where is the largest pyramid in the world?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[28]" required value="109">
-                    Egypt
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[28]" required value="110">
-                    Mexico
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[28]" required value="111">
-                    Guatemala
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[28]" required value="112">
-                    Turkey
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">What is the highest mountain in the world?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[25]" required value="97">
-                    K2
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[25]" required value="98">
-                    Mount Everest
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[25]" required value="99">
-                    Mount Fuji
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[25]" required value="100">
-                    Kilimanjaro
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which country did once have the name Rhodesia?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[35]" required value="137">
-                    Madagascar
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[35]" required value="138">
-                    Zimbabwe
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[35]" required value="139">
-                    Kenya
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[35]" required value="140">
-                    Rwanda
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which part of the body has the thinnest skin?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[37]" required value="145">
-                    Eyelids
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[37]" required value="146">
-                    Feet soles
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[37]" required value="147">
-                    Hands
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[37]" required value="148">
-                    Arms
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Where is the smallest bone of the human body?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[44]" required value="173">
-                    Foot
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[44]" required value="174">
-                    Hand
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[44]" required value="175">
-                    Chest
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[44]" required value="176">
-                    Ear
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">How many teeth does an adult human have?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[40]" required value="157">
-                    28
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[40]" required value="158">
-                    32
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[40]" required value="159">
-                    38
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[40]" required value="160">
-                    40
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">Which creature has the longest pregnancy?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[41]" required value="161">
-                    Giraffe
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[41]" required value="162">
-                    Elephant
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[41]" required value="163">
-                    Bison
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[41]" required value="164">
-                    Camel
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">How many matches did Mohammed Ali lose in his career?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[52]" required value="205">
-                    3
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[52]" required value="206">
-                    1
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[52]" required value="207">
-                    5
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[52]" required value="208">
-                    6
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">How many minutes is a rugby match?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[50]" required value="197">
-                    90
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[50]" required value="198">
-                    80
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[50]" required value="199">
-                    70
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[50]" required value="200">
-                    60
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">What is the name of the Barcelona FC football stadium?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[55]" required value="217">
-                    Santiago Barnabéu
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[55]" required value="218">
-                    La Cartuja
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[55]" required value="219">
-                    RCDE Stadium
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[55]" required value="220">
-                    Camp Nou
-                </label>
-                </ul>
-        <div class="mb4">
-    <p class="center title">In which country is the Interlagos F1-circuit?</p>
-
-    <div class="checkboxes-wrapper" class="center">
-
-
-
-
-            </div>
-
-    <div class="center line"></div>
-</div>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[54]" required value="213">
-                    Italy
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[54]" required value="214">
-                    Belgium
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[54]" required value="215">
-                    Brazil
-                </label>
-                    <li>
-                <label>
-                    <input type="radio" name="answers[54]" required value="216">
-                    Germany
-                </label>
-                </ul>
-
-    <button type="submit" class="center green-btn">Submit</button>
-</form>
-
-
+        </div>
+    </main>
 </body>
 
 </html>

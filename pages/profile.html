@@ -1,66 +1,137 @@
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mister Quiz</title>
-
-    <link type="text/css" rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 
 <body>
+    <header class="fixed">
+        <a href="./index.html" class="logo" draggable="false">Mr.Quizz</a>
+        <a href="./quiz.html" class="btn primary">Start Quizz</a>
+    </header>
+    <main class="unique-col">
+        <style>
+            .unique-col {
+                grid-template-columns: 1fr;
+            }
 
-<a class="top-right-corner red-btn" href=".">Back ></a>
+            label.radio {
+                cursor: pointer;
+                font-size: 2.5rem;
+                line-height: 1.1;
+                display: grid;
+                grid-template-columns: 1em auto;
+                gap: 0.5em;
+                padding-bottom: .5em;
+                border-bottom: 1px solid var(--dark);
+            }
 
-<div style="margin-top:100px">
-    <div class="profile-header">
-        <p class="title profile-name">alpapie</p>
-        <p class="title profile-email">alpapie0908@gmail.com</p>
-    </div>
+            label.radio+label.radio {
+                margin-top: 1em;
+            }
 
-    <div class="profile-header">
-        <p class="title profile-xp">525 Quiz Aprentice XP</p>
-    </div>
-    <div class="results-wrapper">
-                    <p>art</p>
-            <p class="title">25%</p>
-                    <p>geography</p>
-            <p class="title">25%</p>
-                    <p>history</p>
-            <p class="title">25%</p>
-                    <p>science</p>
-            <p class="title">12.5%</p>
-                    <p>sports</p>
-            <p class="title">50%</p>
+            label.radio:focus-within {
+                color: var(--primary);
+            }
+
+            input[type="radio"] {
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: transparent;
+                margin: 0;
+                font: inherit;
+                color: currentColor;
+                width: 1.15em;
+                height: 1.15em;
+                border: 0.15em solid currentColor;
+                border-radius: 50%;
+                transform: translateY(-0.075em);
+
+                display: grid;
+                place-content: center;
+            }
+
+            input[type="radio"]::before {
+                content: "";
+                width: 0.65em;
+                height: 0.65em;
+                border-radius: 50%;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                box-shadow: inset 1em 1em var(--primary);
+                background-color: CanvasText;
+            }
+
+            input[type="radio"]:checked::before {
+                transform: scale(1);
+            }
+
+            input[type="radio"]:focus {
+                outline: max(2px, 0.15em) solid currentColor;
+                outline-offset: max(2px, 0.15em);
+            }
+        </style>
+        <div>
+            <div class="card">
+                <div class="body">
+                    <div class="text--center">
+                        <div class="avatar lg">😁</div>
+                        <h4 class="mt--16">Mamoun Ndiaye</h4>
+                        <span class="text--teal text--small">alpapie0908@gmail.com</span>
+                    </div>
+                </div>
             </div>
-</div>
-
-<div class="results-wrapper">
-    <div class="result">
-        <p>Art</p>
-        <p class="title">2/8</p>
-    </div>
-    <div class="result">
-        <p>Geography</p>
-        <p class="title">2/8</p>
-    </div>
-    <div class="result">
-        <p>History</p>
-        <p class="title">2/8</p>
-    </div>
-    <div class="result">
-        <p>Science</p>
-        <p class="title">1/8</p>
-    </div>
-    <div class="result">
-        <p>Sports</p>
-        <p class="title">4/8</p>
-    </div>
-
-</div>
-
+            <div class="card bg--light-gradient text--dark">
+                <div class="body">
+                    <div class="display--flex justify--space-between">
+                        <div class="text--left">
+                            <div class="text--small">My Rank</div>
+                            <h2>7th</h2>
+                        </div>
+                        <div class="text--right">
+                            <div class="text--small">My Score</div>
+                            <h2>25</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg--light-gradient text--dark">
+                <div class="body">
+                    <div class="display--flex justify--space-between">
+                        <div class="text--left">
+                            <div class="text--small">Art</div>
+                            <h2>7%</h2>
+                            <h2>2/8</h2>
+                        </div>
+                        <div class="text--left">
+                            <div class="text--small">History</div>
+                            <h2>7%</h2>
+                            <h2>2/8</h2>
+                        </div>
+                        <div class="text--center">
+                            <div class="text--small">Sport</div>
+                            <h2>7%</h2>
+                            <h2>2/8</h2>
+                        </div>
+                        <div class="text--right">
+                            <div class="text--small">Science</div>
+                            <h2>7%</h2>
+                            <h2>2/8</h2>
+                        </div>
+                        <div class="text--right">
+                            <div class="text--small">Geography</div>
+                            <h2>7%</h2>
+                            <h2>2/8</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
