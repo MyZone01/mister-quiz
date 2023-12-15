@@ -36,6 +36,6 @@ class RegisterController extends Controller
         Auth::attempt($credentials);
 
         //redirect
-        return redirect()->route('home');
+        return redirect()->route('index');
     }
 }

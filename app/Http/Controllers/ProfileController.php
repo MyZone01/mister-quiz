@@ -16,8 +16,9 @@ class ProfileController extends Controller
 
         foreach ($poucentage as $key => $value) {
             [$correct, $total] = [explode("/", Auth::user()[$key])[0], explode("/", Auth::user()[$key])[1]];
-            $poucentage [strtolower($key) ]=(100*$correct)/$total;
+            $poucentage [strtolower($key) ]= $total>0?(100*$correct)/$total:0;
         }
+       
         return view('profile', ['poucentage'=>$poucentage]);
     }
 }

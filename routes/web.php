@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\Questions\QuestionController;
+use App\Http\Controllers\HomeControoler;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::resource('/', HomeControoler::class);
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login');
 // Route::post('/login', [LoginController::class, 'store']);

@@ -1,43 +1,108 @@
 @extends('app')
 
 @section('content')
+<header>
+    <a href="{{ route('index') }}" class="logo" draggable="false">Mr.Quizz</a>
+    <a href="{{ route('quiz.index') }}" class="btn primary">Start Quizz</a>
+</header>
+<main class="unique-col">
+    <style>
+        .unique-col {
+            grid-template-columns: 1fr;
+        }
 
-<a class="top-left-corner blue-btn" href="{{ route('profile.index') }}"> {{auth()->user()->username}} </a>
+        label.radio {
+            cursor: pointer;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            display: grid;
+            grid-template-columns: 1em auto;
+            gap: 0.5em;
+            padding-bottom: .5em;
+            border-bottom: 1px solid var(--dark);
+        }
 
-<a class="top-right-corner blue-btn" href="{{ route('home') }}">
- Home</a>
+        label.radio+label.radio {
+            margin-top: 1em;
+        }
 
-        <div class="center text-center content">
-            <div>
-                <p class="title">Your score was</p>
-                <p class="title" style="font-size:70px; font-style:bold;">
-                    {{ $results['overall'] }} / 20
-                </p>
-            </div>
+        label.radio:focus-within {
+            color: var(--primary);
+        }
 
-            <div class="results-wrapper">
-                <div class="result">
-                    <p>Art</p>
-                    <p class="title">{{ $results['art'] }} / 4</p>
-                </div>
-                <div class="result">
-                    <p>Geography</p>
-                    <p class="title">{{ $results['geography'] }} / 4</p>
-                </div>
-                <div class="result">
-                    <p>History</p>
-                    <p class="title">{{ $results['history'] }} / 4</p>
-                </div>
-                <div class="result">
-                    <p>Science</p>
-                    <p class="title">{{ $results['science'] }} / 4</p>
-                </div>
-                <div class="result">
-                    <p>Sports</p>
-                    <p class="title">{{ $results['sports'] }} / 4</p>
-                </div>
+        input[type="radio"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 0.15em solid currentColor;
+            border-radius: 50%;
+            transform: translateY(-0.075em);
 
+            display: grid;
+            place-content: center;
+        }
+
+        input[type="radio"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--primary);
+            background-color: CanvasText;
+        }
+
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+
+        input[type="radio"]:focus {
+            outline: max(2px, 0.15em) solid currentColor;
+            outline-offset: max(2px, 0.15em);
+        }
+    </style>
+    <div>
+        <div class="card">
+            <div class="body">
+                <div class="text--center">
+                    <h4 class="mt--16">You have finished</h4>
+                    <h1>Your Score: </h1>
+                    <span class="text--teal text--giant"> {{ $results['overall'] }} / 20</span>
+                </div>
             </div>
         </div>
-
-        @endsection
+        <div class="card bg--light-gradient text--dark">
+            <div class="body">
+                <div class="display--flex justify--space-between">
+                    <div class="text--left">
+                        <div class="text--small">Art</div>
+                        <h2>{{ $results['art'] }}</h2>
+                    </div>
+                    <div class="text--left">
+                        <div class="text--small">History</div>
+                        <h2>{{ $results['history'] }}</h2>
+                    </div>
+                    <div class="text--center">
+                        <div class="text--small">Sport</div>
+                        <h2>{{ $results['sports'] }}</h2>
+                    </div>
+                    <div class="text--right">
+                        <div class="text--small">Science</div>
+                        <h2>{{ $results['science'] }}</h2>
+                    </div>
+                    <div class="text--right">
+                        <div class="text--small">Geography</div>
+                        <h2>{{ $results['geography'] }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@endsection
