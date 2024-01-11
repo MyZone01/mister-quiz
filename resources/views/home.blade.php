@@ -1,10 +1,7 @@
 @extends('app')
 
 @section('content')
-    <header>
-        <a href="{{ route('index') }}" class="logo" draggable="false">Mr.Quizz</a>
-        <a href="{{ route('quiz.index') }}" class="btn primary">Start Quizz</a>
-    </header>
+ @include("header")
     <main>
          @auth
         <div>

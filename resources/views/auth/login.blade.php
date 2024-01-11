@@ -5,7 +5,7 @@
 <header class="fixed">
         <a href="{{ route('index') }}" class="logo" draggable="false">Mr.Quizz</a>
         <p>Login now and start answering question</p>
-    </header>
+</header>
     <main class="unique-col">
         <style>
             .unique-col {

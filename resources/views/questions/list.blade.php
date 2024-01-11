@@ -53,10 +53,7 @@
 
     <button type="submit" class="center green-btn">Submit</button>
 </form> -->
-<header>
-        <a href="{{ route('index') }}" class="logo" draggable="false">Mr.Quizz</a>
-        <a href="{{ route('quiz.index') }}" class="btn primary">Start Quizz</a>
-</header>
+@include("header")
 <main class="unique-col">
     <style>
         .unique-col {

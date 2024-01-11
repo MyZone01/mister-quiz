@@ -2,10 +2,7 @@
 
 @section('content')
 
-<header>
-    <a href="{{ route('index') }}" class="logo" draggable="false">Mr.Quizz</a>
-    <a href="{{ route('quiz.index') }}" class="btn primary">Start Quizz</a>
-</header>
+@include("header")
 <main class="unique-col">
     <style>
         .unique-col {
@@ -34,6 +31,7 @@
                                 <div class="avatar media__img"><img  src="//ui-avatars.com/api/?name={{$user->username}}&size=50&rounded=true&color=fff&background=random" alt=""></div>
                                 <div class="media__content">
                                     <div class="media__title">{{ $user->username }}</div>
+                                    <span><strong>Total correct:</strong> {{ $user->total_correct }}</span>
                                 </div>
                             </div>
                             <div class="text--right text--yellow">
